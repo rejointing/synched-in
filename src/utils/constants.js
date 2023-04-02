@@ -13,3 +13,24 @@ export const COMPANIES = [
     "Spacely Sprockets",
     "HellaWorld, Inc."
 ]
+
+export const MUSIC_GENRES = [
+    'Soul', 
+    'Blues', 
+    'Jazz', 
+    'Non Music', 
+    'Pop', 
+    'Stage And Screen', 
+    'Country', 
+    'Classical', 
+    'Reggae', 
+    'Electronic', 
+    'Funk', 
+    'Latin', 
+    'Rock', 
+    'Hip Hop', 
+    'Folk', 
+    'Rap', 
+    'Metal', 
+    'World'
+]
