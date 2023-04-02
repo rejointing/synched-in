@@ -72,3 +72,80 @@ Steps to do (in `App.js`):
 - Reach out to your instructor if you hit _any_ bugs or have any trouble!
 - Test whether your data is set in state. How can you find out?
 
+## Step 3: Display each `Person`
+
+Each person should have their own individual display element, right? Let's create a `Person.jsx` in `/components`.
+
+For right now, just make `Person.jsx` return a `div` that with text content `I'm a person`!
+
+Now import `Person` into `App.js`. Inside the `return` part of `App.js`, use `.map` to render a `Person` for each person in `people`!
+
+For right now, in your browser, you'll see 300 assertions of individual personhood. We're not here to judge, so we'll accept it!
+
+## Step 4: Pass the data for each person
+
+If you look at the data in `assets/data.json`, you'll see that the information for each person looks roughly like this:
+
+```json
+    {
+        "id": 292,
+        "fullName": "Gwendolyn Casper",
+        "email": "Ibrahim_Barrows@hotmail.com",
+        "devLevel": "senior",
+        "company": "HellaWorld, Inc.",
+        "title": "Principal Optimization Administrator",
+        "image": "https://loremflickr.com/200/200/animals",
+        "favoriteColor": "plum",
+        "favoriteMusicGenre": "Funk",
+        "favoriteAnimal": "snake",
+        "bio": "Vero rem aperiam quia laborum exercitationem id dolor. Repellat officia quis aperiam earum."
+    }
+```
+
+That's a lot of information that we could access by using the keys in each person's object.
+
+Unfortunately, our `Person` component doesn't have that information at the moment. How can we pass that information to the `Person` component?
+
+If we're currently `map`ping a `Person` for each `person` in `people`, then we already have most of what we need in place. Now we just need to pass some props!
+
+It looks ridiculous, but you might use something like this in `App.js`:
+
+```js
+<div className="people-div">
+    { people.map(person => <Person key={person.id} person={person} />) }
+</div>
+```
+
+>Ask your instructor to help break these lines down with you if you're confused.
+
+Inside `Person.jsx`, we'll now be able to access each person's information as `props.person`. Go ahead and try a `console.log(props.person)` in `Person.jsx`!
+
+## Step 5: Customize your person element
+
+Now that we have access to the data, we can show each person's `fullName`, `company`, and `devLevel` individually.
+
+In `Person.jsx`, try to grab some keys from `props.person` and display them on the page instead of `I'm a person!`
+
+Now make them pretty! Remember that this repository has Bootstrap pre-installed, so you can either set up some custom CSS for your `Person` component or use the `react-boostrap` `Card` component: [Documentattion](https://react-bootstrap.github.io/components/cards/)
+
+>If you use `Card`, you'll want to also use its child elements, like `Card.Title` and `Card.Subtitle`.
+
+## Step 6: Make it flex
+
+Right now, you probably see a long column of individual people.
+
+On the `div` in which your `people` appear, use either CSS or flexbox to make your person cards fill the screen side to side and wrap to a new line once the line is full!
+
+> Remember that Bootstrap is preinstalled here. In addition to `react-bootstrap` components, you can also use regular Bootstrap CSS classes.
+>
+>- [Bootstrap Flex](https://getbootstrap.com/docs/4.0/utilities/flex/)
+
+You're ready for the next step!
+
+## BONUS: Style your cards
+
+If you've made it this far, you're ready for step 2. If you have some time to kill, flesh out your `Person` cards!
+
+- Use each person's `favoriteColor` to style their name.
+- Disply the company name and dev level as subtitiles, each in a different way.
+- Show each person's bio as a "pull quote" in italics.
