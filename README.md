@@ -149,3 +149,7 @@ If you've made it this far, you're ready for step 2. If you have some time to ki
 - Use each person's `favoriteColor` to style their name.
 - Disply the company name and dev level as subtitiles, each in a different way.
 - Show each person's bio as a "pull quote" in italics.
+
+## BONUS: Style a header
+
+Right now we just have a bunch of cards. Create a `Header` component with some cool branding moves for our awesome app. We might use it again for navigation later!
